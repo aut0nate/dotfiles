@@ -1,0 +1,31 @@
+# Ignore sensitive files or temporary files
+.cache
+.history
+
+# Ignore general files
+README.md
+
+{{ if eq .preferredShell "bash" }}
+.zshrc
+.p10k.zsh
+.zsh_aliases
+.zsh_env
+.zsh_functions
+.zsh_linux
+.zshrc_macos
+{{ end }}
+
+{{ if eq .preferredShell "zsh" }}
+.bashrc
+.bash_aliases
+{{ end }}
+
+# Hide Linux-specific file on macOS
+{{ if eq .chezmoi.os "darwin" }}
+.zshrc_linux
+{{ end }}
+
+# Hide macOS-specific file on Linux
+{{ if eq .chezmoi.os "linux" }}
+.zshrc_macos
+{{ end }}

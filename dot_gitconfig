@@ -1,0 +1,16 @@
+[user]
+	name = Nathan Darker
+	email = 100093337+aut0nate@users.noreply.github.com
+[init]
+	defaultBranch = main
+[help]
+	autocorrect = 1
+[core]
+	editor = nano
+	fileMode = false
+[color]
+	ui = true
+[push]
+	default = simple
+[credential]
+	helper = manager

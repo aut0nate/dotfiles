@@ -4,3 +4,9 @@
 
 # Ignore general files
 README.md
+
+# Ignoe run_once_setup.sh Ubuntu script
+{{ if ne .chezmoi.osRelease.id "ubuntu" }}
+run_once_setup.sh
+run_once_install_setup.sh.tmpl
+{{ end }}

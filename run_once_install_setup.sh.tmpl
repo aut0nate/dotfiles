@@ -1,0 +1,49 @@
+#!/bin/sh
+
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+# This script will only run on Ubuntu systems
+echo "Running setup for Ubuntu..."
+
+set -e  # Exit immediately if a command fails
+
+echo "🚀 Running initial package installation for Ubuntu..."
+
+# Update package lists & upgrade all packages
+sudo apt update && sudo apt full-upgrade -y
+
+# Install essential packages
+sudo apt install -y curl git zsh tmux htop tree
+
+# Set Zsh as default shell (if not already)
+if [ "$SHELL" != "/bin/zsh" ]; then
+    echo "🔄 Changing default shell to Zsh..."
+    chsh -s "$(command -v zsh)" "$USER"
+fi
+
+# Install Oh My Zsh only if not installed
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "💡 Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+# Install Zsh Plugins
+echo "🔌 Installing Zsh plugins..."
+mkdir -p ~/.oh-my-zsh/custom/plugins
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+fi
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+fi
+
+# Install Powerlevel10k Theme
+echo "🎨 Installing Powerlevel10k theme..."
+mkdir -p ~/.oh-my-zsh/custom/themes
+if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+fi
+
+# Switch to Zsh immediately after installation
+echo "✅ Ubuntu setup complete! Switching to Zsh..."
+exec zsh
+{{ end }}

@@ -5,9 +5,6 @@ isLinux = {{ eq .chezmoi.os "linux" }}
 isWindows = {{ eq .chezmoi.os "windows" }}
 isWSL = {{ and (eq .chezmoi.os "linux") (contains .chezmoi.kernel.osrelease "microsoft") }}
 
-# Define the preferred shell based on the hostname
-preferredShell = {{ if eq .chezmoi.hostname "ubuntu-server" }} "bash" {{ else }} "zsh" {{ end }}
-
 [edit]
 command = "nano"
 

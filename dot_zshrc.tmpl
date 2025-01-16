@@ -23,6 +23,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh/env.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.hostname "vmi2112371") }}
+source ~/.zsh/ssh.zsh
+{{ end }}
 
 # Completion caching
 autoload -Uz compinit

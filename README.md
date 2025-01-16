@@ -18,4 +18,5 @@ chezmoi provides many features beyond symlinking or using a bare git repo includ
 
 - [Installation](https://www.chezmoi.io/install/)
 - [Quick Start](https://www.chezmoi.io/quick-start/)
+- [User Guide](https://www.chezmoi.io/user-guide/command-overview/)
 

@@ -6,7 +6,7 @@
 README.md
 
 # Ignore run_once_setup.sh on non-Ubuntu based systems
-{{ if ne .chezmoi.osRelease.id "ubuntu" }}
-run_once_setup.sh
-run_once_install_setup.sh.tmpl
+{{ if and (hasKey .chezmoi "osRelease") (ne .chezmoi.osRelease.id "ubuntu") }}
+run_once_setup.sh.tmpl
 {{ end }}
+

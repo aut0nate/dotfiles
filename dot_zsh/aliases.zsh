@@ -1,4 +1,5 @@
 # General Aliases
+alias cls="clear"
 alias ll="ls -lAh"
 alias grep="grep --color=auto"
 alias ..="cd .."

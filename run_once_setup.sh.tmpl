@@ -1,6 +1,6 @@
 #!/bin/sh
 
-{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+{{ if and (hasKey .chezmoi "osRelease") (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "ubuntu") }}
 # This script will only run on Ubuntu systems
 echo "Running setup for Ubuntu..."
 

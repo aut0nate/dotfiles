@@ -5,8 +5,8 @@
 # Ignore general files
 README.md
 
-# Ignore run_once_setup.sh on non-Ubuntu based systems
-{{ if and (hasKey .chezmoi "osRelease") (ne .chezmoi.osRelease.id "ubuntu") }}
+# Ignore run_once_setup.sh.tmpl on non-Ubuntu systems, macOS, and non-WSL Windows
+{{ if or .chezmoi.config.data.isMacOS (and .chezmoi.config.data.isWindows (not .chezmoi.config.data.isWSL)) (and (hasKey .chezmoi.osRelease "id") (ne .chezmoi.osRelease.id "ubuntu")) }}
 run_once_setup.sh.tmpl
 {{ end }}
 

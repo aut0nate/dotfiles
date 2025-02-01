@@ -11,3 +11,8 @@ alias gp="git pull"
 alias gc="git commit -m"
 alias ga="git add ."
 
+# macOS Aliases
+{{ if eq .chezmoi.os "darwin" }}
+alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
+{{ end }}
+

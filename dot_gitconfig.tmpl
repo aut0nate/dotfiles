@@ -1,16 +1,26 @@
 [user]
 	name = Nathan Darker
 	email = 100093337+aut0nate@users.noreply.github.com
+
 [init]
 	defaultBranch = main
+
 [help]
 	autocorrect = 1
+
 [core]
+	{{ if eq .chezmoi.os "windows" }}
+	editor = code --wait
+	{{ else }}
 	editor = nano
+	{{ end }}
 	fileMode = false
+
 [color]
 	ui = true
+
 [push]
 	default = simple
+
 [credential]
 	helper = manager

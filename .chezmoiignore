@@ -1,12 +1,29 @@
-# Ignore sensitive files or temporary files
+# Ignore sensitive, temporary, or cache files
 .cache
 .history
 
-# Ignore general files
+# Ignore documentation and development-only files
 README.md
 
-# Ignore Windows folders if not a Windows OS
-{{- if ne .chezmoi.os "windows" }}
+# Ignore Windows-specific files on non-Windows OSes
+{{ if ne .chezmoi.os "windows" }}
 AppData/Local/Programs/oh-my-posh/themes/
+Documents/PowerShell/
+{{ end }}
 
-{{- end }}
+# Ignore macOS-specific files on non-macOS OSes
+{{ if ne .chezmoi.os "darwin" }}
+Library/
+{{ end }}
+
+# Ignore Linux-specific files on non-Linux OSes
+{{ if ne .chezmoi.os "linux" }}
+.config/
+{{ end }}
+
+# Optional: Ignore binary or local override files
+*.bak
+*.tmp
+*.swp
+*.DS_Store
+

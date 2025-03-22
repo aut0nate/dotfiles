@@ -1,3 +1,5 @@
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") }}
+
 # General Aliases
 alias cls="clear"
 alias ll="ls -lAh"

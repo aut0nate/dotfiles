@@ -1,3 +1,6 @@
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") }}
+
+
 # Reload Zsh
 reload() {
     source ~/.zshrc

@@ -6,13 +6,12 @@ isWindows = {{ eq .chezmoi.os "windows" }}
 isWSL = {{ and (eq .chezmoi.os "linux") (contains .chezmoi.kernel.osrelease "microsoft") }}
 
 [edit]
-{{ if eq .chezmoi.os "darwin" }}
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "windows") }}
 command = "code"
 args = ["--wait"]
 {{ else if eq .chezmoi.os "linux" }}
 command = "nano"
 {{ end }}
-
 
 [git]
 autoCommit = true

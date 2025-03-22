@@ -5,3 +5,8 @@
 # Ignore general files
 README.md
 
+# Ignore Windows folders if not a Windows OS
+{{- if ne .chezmoi.os "windows" }}
+AppData/Local/Programs/oh-my-posh/themes/
+
+{{- end }}

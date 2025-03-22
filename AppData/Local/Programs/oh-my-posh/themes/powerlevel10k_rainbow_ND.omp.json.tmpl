@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "windows" }}
+{{- if eq .chezmoi.os "windows" }}
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "console_title_template": "{{ .Shell }} in {{ .Folder }}",
@@ -243,4 +243,4 @@
   "version": 3,
   "final_space": true
 }
-{{ end }}
+{{- end }}

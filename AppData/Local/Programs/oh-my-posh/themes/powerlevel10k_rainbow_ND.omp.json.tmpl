@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "windows" }}
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+  "console_title_template": "{{`{{`}} .Shell }} in {{`{{`}} .Folder }}",
   "blocks": [
     {
       "type": "prompt",
@@ -12,7 +12,7 @@
             "cache_duration": "none"
           },
           "leading_diamond": "\u256d\u2500\ue0b2",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": " {{`{{`}} if .WSL }}WSL at {{`{{`}} end }}{{`{{`}}.Icon}} ",
           "foreground": "#000000",
           "background": "#d3d7cf",
           "type": "os",
@@ -24,7 +24,7 @@
             "home_icon": "~",
             "style": "full"
           },
-          "template": " \uf07c {{ .Path }} ",
+          "template": " \uf07c {{`{{`}}.Path}} ",
           "foreground": "#e4e4e4",
           "powerline_symbol": "\ue0b0",
           "background": "#3465a4",
@@ -39,17 +39,17 @@
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "template": " {{`{{`}}.UpstreamIcon}}{{`{{`}}.HEAD}}{{`{{`}}.BranchStatus}}{{`{{`}} if .Working.Changed }} \uf044 {{`{{`}}.Working.String}}{{`{{`}} end }}{{`{{`}} if and (.Working.Changed) (.Staging.Changed) }} |{{`{{`}} end }}{{`{{`}} if .Staging.Changed }} \uf046 {{`{{`}}.Staging.String}}{{`{{`}} end }}{{`{{`}} if gt .StashCount 0 }} \uf692 {{`{{`}}.StashCount}}{{`{{`}} end }} ",
           "foreground": "#000000",
           "powerline_symbol": "\ue0b0",
           "background": "#4e9a06",
           "type": "git",
           "style": "powerline",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#c4a000{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f26d50{{ end }}",
-            "{{ if gt .Ahead 0 }}#89d1dc{{ end }}",
-            "{{ if gt .Behind 0 }}#4e9a06{{ end }}"
+            "{{`{{`}} if or (.Working.Changed) (.Staging.Changed) }}#c4a000{{`{{`}} end }}",
+            "{{`{{`}} if and (gt .Ahead 0) (gt .Behind 0) }}#f26d50{{`{{`}} end }}",
+            "{{`{{`}} if gt .Ahead 0 }}#89d1dc{{`{{`}} end }}",
+            "{{`{{`}} if gt .Behind 0 }}#4e9a06{{`{{`}} end }}"
           ]
         }
       ]
@@ -63,7 +63,7 @@
             "cache_duration": "none",
             "fetch_version": true
           },
-          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \uf898 ",
+          "template": " {{`{{`}} if .PackageManagerIcon }}{{`{{`}} .PackageManagerIcon }} {{`{{`}} end }}{{`{{`}} .Full }} \uf898 ",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b2",
           "background": "#689f63",
@@ -76,7 +76,7 @@
             "cache_duration": "none",
             "fetch_version": true
           },
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue627 ",
+          "template": " {{`{{`}} if .Error }}{{`{{`}} .Error }}{{`{{`}} else }}{{`{{`}} .Full }}{{`{{`}} end }} \ue627 ",
           "foreground": "#111111",
           "powerline_symbol": "\ue0b2",
           "background": "#00acd7",
@@ -89,7 +89,7 @@
             "cache_duration": "none",
             "fetch_version": true
           },
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue624 ",
+          "template": " {{`{{`}} if .Error }}{{`{{`}} .Error }}{{`{{`}} else }}{{`{{`}} .Full }}{{`{{`}} end }} \ue624 ",
           "foreground": "#111111",
           "powerline_symbol": "\ue0b2",
           "background": "#4063D8",
@@ -103,7 +103,7 @@
             "display_mode": "files",
             "fetch_virtual_env": false
           },
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue235 ",
+          "template": " {{`{{`}} if .Error }}{{`{{`}} .Error }}{{`{{`}} else }}{{`{{`}} .Full }}{{`{{`}} end }} \ue235 ",
           "foreground": "#111111",
           "powerline_symbol": "\ue0b2",
           "background": "#FFDE57",
@@ -117,7 +117,7 @@
             "display_mode": "files",
             "fetch_version": true
           },
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 ",
+          "template": " {{`{{`}} if .Error }}{{`{{`}} .Error }}{{`{{`}} else }}{{`{{`}} .Full }}{{`{{`}} end }} \ue791 ",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b2",
           "background": "#AE1401",
@@ -131,7 +131,7 @@
             "display_mode": "files",
             "fetch_version": false
           },
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf0e7",
+          "template": " {{`{{`}} if .Error }}{{`{{`}} .Error }}{{`{{`}} else }}{{`{{`}} .Full }}{{`{{`}} end }} \uf0e7",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b2",
           "background": "#FEAC19",
@@ -144,14 +144,14 @@
             "cache_duration": "none",
             "display_default": false
           },
-          "template": " {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad ",
+          "template": " {{`{{`}} .Profile }}{{`{{`}} if .Region }}@{{`{{`}} .Region }}{{`{{`}} end }} \ue7ad ",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b2",
           "type": "aws",
           "style": "powerline",
           "background_templates": [
-            "{{if contains \"default\" .Profile}}#FFA400{{end}}",
-            "{{if contains \"jan\" .Profile}}#f1184c{{end}}"
+            "{{`{{`}}if contains \"default\" .Profile}}#FFA400{{`{{`}}end}}",
+            "{{`{{`}}if contains \"jan\" .Profile}}#f1184c{{`{{`}}end}}"
           ],
           "invert_powerline": true
         },
@@ -171,7 +171,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " {{ .FormattedMs }} \uf252 ",
+          "template": " {{`{{`}} .FormattedMs }} \uf252 ",
           "foreground": "#000000",
           "powerline_symbol": "\ue0b2",
           "background": "#c4a000",
@@ -184,14 +184,14 @@
             "always_enabled": true,
             "cache_duration": "none"
           },
-          "template": " {{ if gt .Code 0 }}{{ .Meaning }}{{ else }}✔{{ end }} ",
+          "template": " {{`{{`}} if gt .Code 0 }}{{`{{`}} .Meaning }}{{`{{`}} else }}✔{{`{{`}} end }} ",
           "foreground": "#d3d7cf",
           "powerline_symbol": "\ue0b2",
           "background": "#000000",
           "type": "exit",
           "style": "powerline",
           "background_templates": [
-            "{{ if gt .Code 0 }}#cc2222{{ end }}"
+            "{{`{{`}} if gt .Code 0 }}#cc2222{{`{{`}} end }}"
           ],
           "invert_powerline": true
         },
@@ -200,7 +200,7 @@
             "cache_duration": "none"
           },
           "trailing_diamond": "\ue0b0\u2500\u256e",
-          "template": " {{ .CurrentDate | date .Format }} \uf017 ",
+          "template": " {{`{{`}} .CurrentDate | date .Format }} \uf017 ",
           "foreground": "#000000",
           "background": "#d3d7cf",
           "type": "time",

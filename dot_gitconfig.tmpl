@@ -9,11 +9,11 @@
 	autocorrect = 1
 
 [core]
-	{{ if eq .chezmoi.os "windows" }}
+	{{- if eq .chezmoi.os "windows" }}
 	editor = code --wait
 	{{ else }}
 	editor = nano
-	{{ end }}
+	{{- end }}
 	fileMode = false
 
 [color]

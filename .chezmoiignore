@@ -5,25 +5,28 @@
 # Ignore documentation and development-only files
 README.md
 
-# Ignore Windows-specific files on non-Windows OSes
+# Ignore files & folders on Windows
+{{ if eq .chezmoi.os "windows" }}
+.zsh/
+{{ end }}
+
+# Ignore Windows specific files on non-Windows OSes
 {{ if ne .chezmoi.os "windows" }}
 AppData/Local/Programs/oh-my-posh/themes/
 Documents/PowerShell/
 {{ end }}
 
-# Ignore macOS-specific files on non-macOS OSes
+# Ignore macOS specific files on non-macOS OSes
 {{ if ne .chezmoi.os "darwin" }}
 Library/
 {{ end }}
 
-# Ignore Linux-specific files on non-Linux OSes
+# Ignore Linux specific files on non-Linux OSes
 {{ if ne .chezmoi.os "linux" }}
-.config/
 {{ end }}
 
-# Optional: Ignore binary or local override files
+# Ignore other types of files
 *.bak
 *.tmp
 *.swp
 *.DS_Store
-

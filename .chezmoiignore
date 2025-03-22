@@ -12,8 +12,8 @@ README.md
 
 # Ignore Windows specific files on non-Windows OSes
 {{ if ne .chezmoi.os "windows" }}
-AppData/Local/Programs/oh-my-posh/themes/
-Documents/PowerShell/
+AppData/
+Documents/
 {{ end }}
 
 # Ignore macOS specific files on non-macOS OSes

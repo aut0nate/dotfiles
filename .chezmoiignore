@@ -23,7 +23,11 @@ Library/
 
 # Ignore Linux specific files on non-Linux OSes
 {{ if ne .chezmoi.os "linux" }}
+.bashrc
+.profile
+.bash/
 {{ end }}
+
 
 # Ignore other types of files
 *.bak

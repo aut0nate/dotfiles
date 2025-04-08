@@ -4,6 +4,8 @@ isMacOS = {{ eq .chezmoi.os "darwin" }}
 isLinux = {{ eq .chezmoi.os "linux" }}
 isWindows = {{ eq .chezmoi.os "windows" }}
 isWSL = {{ and (eq .chezmoi.os "linux") (contains .chezmoi.kernel.osrelease "microsoft") }}
+isZsh = {{ eq .chezmoi.userShell "zsh"}}
+isBash = {{ eq.chezmoi.userShell "bash"}}
 
 [edit]
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "windows") }}

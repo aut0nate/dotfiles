@@ -1,8 +1,4 @@
 [data]
-userShell = "{{ (base (index .chezmoi.userShellArgs 0)) }}"
-isZsh = {{ eq .chezmoi.userShell "zsh"}}
-isBash = {{ eq.chezmoi.userShell "bash"}}
-
 hostname = "{{ .chezmoi.hostname }}"
 isMacOS = {{ eq .chezmoi.os "darwin" }}
 isLinux = {{ eq .chezmoi.os "linux" }}

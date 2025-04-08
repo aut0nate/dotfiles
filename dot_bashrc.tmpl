@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" }}
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -106,3 +107,5 @@ fi
 [ -f "$HOME/.bash/bash_aliases" ] && source "$HOME/.bash/bash_aliases"
 [ -f "$HOME/.bash/bash_env" ] && source "$HOME/.bash/bash_env"
 [ -f "$HOME/.bash/bash_functions" ] && source "$HOME/.bash/bash_functions"
+
+{{ end }}

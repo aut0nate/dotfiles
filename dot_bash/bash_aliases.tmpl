@@ -1,6 +1,10 @@
+{{ if eq .chezmoi.os "linux" }}
+
 # General Aliases
 
 alias cls="clear"
 alias ll="ls -lAh"
 alias ..='cd ..'
 alias ...='cd ../..'
+
+{{ end }}

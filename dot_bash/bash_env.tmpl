@@ -1,3 +1,5 @@
+{{ if eq .chezmoi.os "linux" }}
+
 # Add user bin directories to PATH
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 
@@ -30,3 +32,4 @@ shopt -s histappend
 # Save history incrementally
 PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
+{{ end }}

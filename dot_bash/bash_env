@@ -1,0 +1,32 @@
+# Add user bin directories to PATH
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+
+# Preferred editor
+export EDITOR="nano"
+export VISUAL="$EDITOR"
+
+# Bash history configuration
+export HISTFILE=~/.bash_history
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+
+# Locale settings
+export LANG="en_GB.UTF-8"
+export LC_ALL="en_GB.UTF-8"
+export LC_TIME="en_GB.UTF-8"
+export LC_MONETARY="en_GB.UTF-8"
+export LC_MEASUREMENT="en_GB.UTF-8"
+
+# Ignore duplicates and commands starting with space
+export HISTCONTROL=ignoreboth
+
+# Remove redundant spaces (approximate via PROMPT_COMMAND)
+shopt -s cmdhist            # multi-line commands saved as single lines
+shopt -s lithist            # save command line exactly as typed
+
+# Append history instead of overwriting
+shopt -s histappend
+
+# Save history incrementally
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+

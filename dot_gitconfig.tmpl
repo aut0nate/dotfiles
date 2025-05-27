@@ -15,6 +15,9 @@
 	editor = nano
 	{{ end }}
 	fileMode = false
+	{{- if eq .chezmoi.os "windows" }}
+	autocrlf = true
+	{{ end }}
 
 [color]
 	ui = true

@@ -21,6 +21,28 @@
 
 [push]
 	default = simple
+        autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[branch]
+    sort = -committerdate
+
+[diff]
+    colorMoved = zebra
+
+[log]
+    date = iso
 
 [credential]
 	helper = manager
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --oneline --graph --all --decorate
+    last = log -1 HEAD
+    unstage = reset HEAD --

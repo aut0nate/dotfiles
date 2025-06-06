@@ -1,5 +1,3 @@
-{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") }}
-
 # General Aliases
 alias cls="clear"
 alias ll="ls -lAh"
@@ -16,6 +14,4 @@ alias ga="git add ."
 {{ if eq .chezmoi.os "darwin" }}
 # macOS Aliases
 alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
-{{ end }}
-
 {{ end }}

@@ -9,4 +9,45 @@ Import-Module -Name Terminal-Icons
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Windows
+
+# Enhanced PSReadLine settings
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -Colors @{
+    "Command" = [ConsoleColor]::Green
+    "Parameter" = [ConsoleColor]::Cyan
+    "String" = [ConsoleColor]::Yellow
+    "Operator" = [ConsoleColor]::DarkGray
+}
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
+
+# Aliases
+Set-Alias ll Get-ChildItem
+Set-Alias la 'Get-ChildItem -Force'
+Set-Alias cat Get-Content
+
+# Functions
+
+# Opens a new PowerShell session in your chezmoi source directory
+# Equivalent to `chezmoi cd`, but runs in PowerShell instead of CMD
+function chezcd {
+    pwsh -NoExit -Command "Set-Location '$(chezmoi source-path)'"
+}
+
+# --- Default text editor configuration ---
+$env:EDITOR = "C:\WINDOWS\system32\edit.exe"
+$env:VISUAL = $env:EDITOR
+
+# Helper function to edit files quickly
+function edit-file {
+    param(
+        [Parameter(Mandatory, Position=0)]
+        [string]$Path
+    )
+    & $env:EDITOR $Path
+}
+
+Set-Alias editf edit-file
+
+
 {{ end }}

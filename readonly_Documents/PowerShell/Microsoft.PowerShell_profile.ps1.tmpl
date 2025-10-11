@@ -34,20 +34,4 @@ function chezcd {
     pwsh -NoExit -Command "Set-Location '$(chezmoi source-path)'"
 }
 
-# --- Default text editor configuration ---
-$env:EDITOR = "C:\WINDOWS\system32\edit.exe"
-$env:VISUAL = $env:EDITOR
-
-# Helper function to edit files quickly
-function edit-file {
-    param(
-        [Parameter(Mandatory, Position=0)]
-        [string]$Path
-    )
-    & $env:EDITOR $Path
-}
-
-Set-Alias editf edit-file
-
-
 {{ end }}

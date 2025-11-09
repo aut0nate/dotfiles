@@ -6,7 +6,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 # Ubuntu Aliases
-{{ if eq .chezmoi.osRelease.name "Ubuntu" }}
+{{- if eq .chezmoi.osRelease.name "Ubuntu" }}
 alias update="sudo apt update && sudo apt upgrade -y"
 {{ end }}
 

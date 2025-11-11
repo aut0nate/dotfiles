@@ -10,6 +10,11 @@ alias ...="cd ../.."
 alias update="sudo apt update && sudo apt upgrade -y"
 {{ end }}
 
+# Ubuntu Aliases
+{{- if eq .chezmoi.osRelease.name "Fedora Linux" }}
+alias update="sudo dnf update && sudo dnf upgrade -y"
+{{ end }}
+
 # Git Aliases
 alias gs="git status"
 alias gp="git pull"

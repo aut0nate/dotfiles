@@ -10,7 +10,7 @@ alias ...="cd ../.."
 alias update="sudo apt update && sudo apt upgrade -y"
 {{ end }}
 
-# Ubuntu Aliases
+# Fedora Aliases
 {{- if eq .chezmoi.osRelease.name "Fedora Linux" }}
 alias update="sudo dnf update && sudo dnf upgrade -y"
 {{ end }}

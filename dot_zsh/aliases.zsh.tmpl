@@ -5,6 +5,7 @@ alias grep="grep --color=auto"
 alias ..="cd .."
 alias ...="cd ../.."
 
+
 {{- if eq .chezmoi.os "linux" }}
   {{- if and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "ubuntu") }}
 # Linux Distribution-Specific Aliases
@@ -19,6 +20,7 @@ alias gs="git status"
 alias gp="git pull"
 alias gc="git commit -m"
 alias ga="git add ."
+
 
 {{- if eq .chezmoi.os "darwin" }}
 # macOS Aliases

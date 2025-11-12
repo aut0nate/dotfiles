@@ -1,5 +1,47 @@
+# This is the configuration file for Ghostty.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# reload config:  ctrl+shift+, (Linux) or cmd+shift+, (macOS)
+
 font-family = MesloLGS Nerd Font Mono
 font-size = 15
-background-opacity = 0.7
+background-opacity = 0.85
 theme = One Half Dark
 shell-integration-features = ssh-env,ssh-terminfo
+window-subtitle = working-directory
+focus-follows-mouse = true
+clipboard-read = allow
+clipboard-write = allow
+confirm-close-surface = false
+
+# drop-down terminal
+keybind = global:option+space=toggle_quick_terminal
+quick-terminal-position = top
+
+# split windows terminal
+keybind = cmd+up=new_split:up
+keybind = cmd+down=new_split:down
+keybind = cmd+left=new_split:left
+keybind = cmd+right=new_split:right
+
+# move between windows terminal
+keybind = option+up=goto_split:up
+keybind = option+down=goto_split:down
+keybind = option+l=goto_split:left
+keybind = option+r=goto_split:right
+
+# delete line
+keybind = cmd+backspace=esc:w
+
+# delete word left
+keybind = cmd+delete=text:\x1b\x7f
+
+# copy and paste
+keybind = performable:cmd+c=copy_to_clipboard
+keybind = performable:cmd+v=paste_from_clipboard
+
+# cursor movements
+keybind = option+left=esc:b
+keybind = option+right=esc:f

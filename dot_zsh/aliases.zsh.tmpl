@@ -8,6 +8,7 @@ alias ...="cd ../.."
 
 {{- if eq .chezmoi.os "linux" }}
   {{- if and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "ubuntu") }}
+
 # Linux Distribution-Specific Aliases
 alias update="sudo apt update && sudo apt upgrade -y"
   {{- else if and (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "fedora") }}
@@ -27,5 +28,4 @@ alias ga="git add ."
 # macOS Aliases
 alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
 {{ end }}

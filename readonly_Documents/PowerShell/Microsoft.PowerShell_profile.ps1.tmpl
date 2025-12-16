@@ -7,11 +7,10 @@ Import-Module -Name Terminal-Icons
 
 # Set PSReadLine options
 Set-PSReadLineOption -BellStyle None
-Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionSource None
 Set-PSReadLineOption -EditMode Windows
 
 # Enhanced PSReadLine settings
-Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -Colors @{
     "Command" = [ConsoleColor]::Green
     "Parameter" = [ConsoleColor]::Cyan

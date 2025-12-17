@@ -9,6 +9,7 @@ README.md
 {{ if eq .chezmoi.os "windows" }}
 .zsh/
 .themes/
+.config/ghostty/
 {{ end }}
 
 # Ignore Windows specific files on non-Windows OSes

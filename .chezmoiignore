@@ -8,7 +8,7 @@ README.md
 # Ignore files & folders on Windows
 {{ if eq .chezmoi.os "windows" }}
 .zsh/
-dot_themes/
+.themes/
 {{ end }}
 
 # Ignore Windows specific files on non-Windows OSes

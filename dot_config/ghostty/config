@@ -16,7 +16,6 @@ focus-follows-mouse = true
 clipboard-read = allow
 clipboard-write = allow
 confirm-close-surface = false
-copy-on-select = clipboard
 
 # drop-down terminal
 keybind = global:option+space=toggle_quick_terminal

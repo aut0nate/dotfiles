@@ -8,13 +8,13 @@ README.md
 # Ignore files & folders on Windows
 {{ if eq .chezmoi.os "windows" }}
 .zsh/
+dot_themes/
 {{ end }}
 
 # Ignore Windows specific files on non-Windows OSes
 {{ if ne .chezmoi.os "windows" }}
 AppData/
 Documents/
-.themes/
 {{ end }}
 
 # Ignore macOS specific files on non-macOS OSes

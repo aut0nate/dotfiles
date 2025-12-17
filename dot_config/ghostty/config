@@ -1,3 +1,4 @@
+{{- if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") }}
 # This is the configuration file for Ghostty.
 #
 # Additionally, each config option is also explained in detail
@@ -47,3 +48,4 @@ keybind = performable:cmd+v=paste_from_clipboard
 # cursor movements
 keybind = option+left=esc:b
 keybind = option+right=esc:f
+{{ end }}

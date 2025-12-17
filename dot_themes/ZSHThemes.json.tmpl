@@ -1,3 +1,4 @@
+{{- if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") }}
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
@@ -213,3 +214,4 @@
   "final_space": true,
   "version": 4
 }
+{{ end }}

@@ -11,10 +11,12 @@ background-opacity = 0.85
 theme = One Half Dark
 shell-integration-features = ssh-env,ssh-terminfo,sudo
 window-subtitle = working-directory
+window-save-state = always
 focus-follows-mouse = true
 clipboard-read = allow
 clipboard-write = allow
 confirm-close-surface = false
+copy-on-select = clipboard
 
 # drop-down terminal
 keybind = global:option+space=toggle_quick_terminal

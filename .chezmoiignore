@@ -14,7 +14,7 @@ README.md
 {{ if ne .chezmoi.os "windows" }}
 AppData/
 Documents/
-dot_themes/
+.themes/
 {{ end }}
 
 # Ignore macOS specific files on non-macOS OSes
